@@ -9,11 +9,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const Page = async ({ params }) => {
-  const resolvedParams = await params;
+const Page = async () => {
   return (
     <>
-      <CityResults params={resolvedParams} type="Virtual Office" />
+      <CityResults type="Virtual Office" />
     </>
   );
 };

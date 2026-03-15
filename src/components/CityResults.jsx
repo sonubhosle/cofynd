@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronDown, Search, MapPin, SlidersHorizontal, LayoutGrid, List, ChevronLeft, ChevronRight, X, Star, Crown } from 'lucide-react';
+import { useParams } from 'next/navigation';
 import QuoteModal from './QuoteModal';
 import SkeletonCard from './SkeletonCard';
 import PropertyCard from './PropertyCard';
@@ -98,7 +99,8 @@ const topLocations = [
   { name: "Ameerpet", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" }
 ];
 
-const CityResults = ({ params, type }) => {
+const CityResults = ({ type }) => {
+  const params = useParams();
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
   const [selectedSort, setSelectedSort] = useState('Popularity');
@@ -123,8 +125,7 @@ const CityResults = ({ params, type }) => {
   const [startXFeatured, setStartXFeatured] = useState(0);
   const [scrollLeftFeatured, setScrollLeftFeatured] = useState(0);
 
-  const params_data = params;
-  const city = params_data?.slug || params_data?.city;
+  const city = params?.slug || params?.city;
   const cityName = city ? city.charAt(0).toUpperCase() + city.slice(1) : "Gurgaon";
 
   useEffect(() => {

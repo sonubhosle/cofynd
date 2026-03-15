@@ -8,7 +8,7 @@ const CoworkingClient = ({ params, isCityPage }) => {
   return (
     <>
       {isCityPage ? (
-        <CityResults params={params} type="Coworking" />
+        <CityResults type="Coworking" />
       ) : (
         <PropertyDetailsWrapper slug={params.slug} />
       )}

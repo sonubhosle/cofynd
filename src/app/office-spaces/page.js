@@ -7,10 +7,10 @@ export const metadata = {
   description: "Find the best office spaces for rent. From private offices to managed floor plates, discover verified office solutions with CoFynd.",
 };
 
-export default function OfficeSpacesPage({ params }) {
+export default async function OfficeSpacesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <CityResults params={{ slug: 'gurgaon' }} type="Office" />
+      <CityResults type="Office" />
     </div>
   );
 }
