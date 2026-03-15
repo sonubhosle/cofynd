@@ -123,8 +123,8 @@ const CityResults = ({ params, type }) => {
   const [startXFeatured, setStartXFeatured] = useState(0);
   const [scrollLeftFeatured, setScrollLeftFeatured] = useState(0);
 
-  const params_data = React.use(params);
-  const city = params_data.slug || params_data.city;
+  const params_data = params;
+  const city = params_data?.slug || params_data?.city;
   const cityName = city ? city.charAt(0).toUpperCase() + city.slice(1) : "Gurgaon";
 
   useEffect(() => {
